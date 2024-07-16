@@ -1,0 +1,78 @@
+@startuml
+
+' Hayvan sınıfı
+abstract class Hayvan {
+    - String türAdı
+    - double ağırlık
+    - int yaş
+
+    + double getDosage()
+    + String getFeedSchedule()
+}
+
+' Atlar sınıfı
+class Atlar extends Hayvan {
+    + double getDosage()
+    + String getFeedSchedule()
+}
+
+' Zebra sınıfı
+class Zebra extends Atlar {
+    + double getDosage()
+    + String getFeedSchedule()
+}
+
+' Eşek sınıfı
+class Eşek extends Atlar {
+    + double getDosage()
+    + String getFeedSchedule()
+}
+
+' Kedigiller sınıfı
+class Kedigiller extends Hayvan {
+    + double getDosage()
+    + String getFeedSchedule()
+}
+
+' Kaplan sınıfı
+class Kaplan extends Kedigiller {
+    + double getDosage()
+    + String getFeedSchedule()
+}
+
+' Aslan sınıfı
+class Aslan extends Kedigiller {
+    + double getDosage()
+    + String getFeedSchedule()
+}
+
+' Kemirgenler sınıfı
+class Kemirgenler extends Hayvan {
+    + double getDosage()
+    + String getFeedSchedule()
+}
+
+' Sıçan sınıfı
+class Sıçan extends Kemirgenler {
+    + double getDosage()
+    + String getFeedSchedule()
+}
+
+' Kunduz sınıfı
+class Kunduz extends Kemirgenler {
+    + double getDosage()
+    + String getFeedSchedule()
+}
+
+' İlişkiler
+Hayvan <|-- Atlar
+Atlar <|-- Zebra
+Atlar <|-- Eşek
+Hayvan <|-- Kedigiller
+Kedigiller <|-- Kaplan
+Kedigiller <|-- Aslan
+Hayvan <|-- Kemirgenler
+Kemirgenler <|-- Sıçan
+Kemirgenler <|-- Kunduz
+
+@enduml

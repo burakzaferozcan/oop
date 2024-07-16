@@ -1,0 +1,47 @@
+@startuml
+
+' Kullanıcı sınıfı
+abstract class Kullanici {
+    - int kimlik
+    - String isim
+    - String email
+    - String telefon
+}
+
+' Abone sınıfı
+class Abone {
+    - double kredi
+    + double getKredi()
+    + void setKredi(double kredi)
+}
+
+' NormalKullanici sınıfı
+class NormalKullanici {
+}
+
+' Film sınıfı
+class Film {
+    - int kimlik
+    - String baslik
+    - String tür
+    - boolean mevcut
+    - double fiyat
+}
+
+' Talep sınıfı
+class Talep {
+    - int kimlik
+    - Film film
+    - Kullanici kullanici
+}
+
+' İlişkiler
+Kullanici <|-- Abone
+Kullanici <|-- NormalKullanici
+Abone "1" *-- "0..*" Film : kiralar
+NormalKullanici "1" *-- "0..*" Film : satın alır
+Film "1" *-- "0..*" Talep : talep edilir
+Abone "1" *-- "0..*" Talep : talep eder
+NormalKullanici "1" *-- "0..*" Talep : talep eder
+
+@enduml

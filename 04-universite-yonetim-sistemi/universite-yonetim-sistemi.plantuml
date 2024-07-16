@@ -1,0 +1,35 @@
+@startuml
+
+' Üniversite Sınıfı
+class Universite {
+}
+
+' Ofis Sınıfı
+class Ofis {
+}
+
+' Departman Sınıfı
+class Departman {
+}
+
+' Çalışan Sınıfı
+class Calisan {
+}
+
+' Profesör Sınıfı
+class Profesör {
+}
+
+' Memur Sınıfı
+class Memur {
+}
+
+' İlişkiler
+Universite "1" *-- "0..*" Departman : içerir
+Departman "1" *-- "0..*" Ofis : ait
+Universite "1" *-- "0..*" Calisan : çalışır
+Calisan "1" *-- "1" Ofis : çalışır
+Calisan <|-- Profesör
+Calisan <|-- Memur
+
+@enduml

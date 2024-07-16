@@ -1,0 +1,57 @@
+@startuml
+
+' HavaYoluSirketi sınıfı
+class HavaYoluSirketi {
+    - int kimlik
+    - String isim
+}
+
+' Ucak sınıfı
+class Ucak {
+    - int kimlik
+    - String tip
+    - String durum
+}
+
+' Ucus sınıfı
+class Ucus {
+    - int kimlik
+    - Havaalani kalkisHavaalani
+    - Havaalani inisHavaalani
+    - Date kalkisSaati
+    - Date inisSaati
+}
+
+' Havaalani sınıfı
+class Havaalani {
+    - int kimlik
+    - String isim
+}
+
+' Pilot sınıfı
+class Pilot {
+    - int kimlik
+    - String isim
+    - String deneyimSeviyesi
+}
+
+' YardimciPilot sınıfı
+class YardimciPilot {
+    - int kimlik
+    - String isim
+    - String deneyimSeviyesi
+}
+
+' İlişkiler
+HavaYoluSirketi "1" *-- "0..*" Ucus : gerçekleştirir
+HavaYoluSirketi "1" *-- "0..*" Ucak : sahiptir
+Ucus "1" *-- "1" Pilot : pilot
+Ucus "1" *-- "1" YardimciPilot : yardımcı pilot
+Ucus "1" *-- "1" Ucak : kullanır
+Ucus "1" *-- "1" Havaalani : kalkisHavaalani
+Ucus "1" *-- "1" Havaalani : inisHavaalani
+HavaYoluSirketi "1" *-- "0..*" Pilot : pilotları var
+HavaYoluSirketi "1" *-- "0..*" YardimciPilot : yardımcı pilotları var
+Ucak "1" *-- "0..*" Pilot : ihtiyaç duyulan pilot sayısı
+
+@enduml

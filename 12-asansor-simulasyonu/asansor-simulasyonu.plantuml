@@ -1,0 +1,96 @@
+@startuml
+
+' Soyut sınıf: Aygıt
+abstract class Aygit {
+    - String durum
+    + void çalıştır()
+    + void durdur()
+}
+
+' Asansör sınıfı
+class Asansor {
+    - int kapasite
+    - int mevcutKat
+    - boolean enerjiTasarrufu
+    - Kapı kapı
+    - KontrolPanel kontrolPanel
+    + void çağrıyıYönet()
+    + void hareketEt()
+    + void dur()
+}
+
+' Kapı sınıfı
+class Kapı {
+    - boolean açık
+    - Işık sinyalIşığı
+    - Zil varışZili
+    + void aç()
+    + void kapa()
+}
+
+' KontrolPanel sınıfı
+class KontrolPanel {
+    - Düğme hedefDüğmeleri
+    - Düğme kapıAçmaDüğmesi
+    - Düğme kapıKapamaDüğmesi
+    - Düğme acilDurumSinyali
+}
+
+' Işık sınıfı
+class Işık {
+    - boolean yanıyor
+    + void yak()
+    + void söndür()
+}
+
+' Zil sınıfı
+class Zil {
+    - boolean çalıyor
+    + void çal()
+}
+
+' Düğme sınıfı
+class Düğme {
+    - boolean basıldı
+    + void bas()
+}
+
+' Kat sınıfı
+class Kat {
+    - Kapı kapı
+    - Düğme yukarıDüğmesi
+    - Düğme aşağıDüğmesi
+    - Işık sinyalIşığı
+    - Zil varışZili
+}
+
+' Saat sınıfı
+class Saat {
+    - int zaman
+    + void ileriAl()
+    + int getZaman()
+}
+
+' Yolcu sınıfı
+class Yolcu {
+    - int kalkışKat
+    - int varışKat
+    + void hareketEt()
+}
+
+' İlişkiler
+Asansor *-- Kapı : içerir
+Asansor *-- KontrolPanel : içerir
+Kapı *-- Işık : içerir
+Kapı *-- Zil : içerir
+KontrolPanel *-- Düğme : içerir
+Kat *-- Kapı : içerir
+Kat *-- Düğme : içerir
+Kat *-- Işık : içerir
+Kat *-- Zil : içerir
+Saat o-- Asansor : simüle eder
+Saat o-- Yolcu : simüle eder
+Asansor *-- Yolcu : taşır
+Yolcu "1" *-- "1" Kat : belirler
+
+@enduml
