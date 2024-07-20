@@ -10,8 +10,8 @@ Polimorfizm sayesinde uygulamaların genişletilebilirliğini sağlarız ve bir 
 
 ## Polimorfizm Örneği 1
 
-![0](0.jpg)
+![0](images/0.jpg)
 
 ## Polimorfizm Örneği 2
 
-![1](1.png)
+![1](images/1.png)

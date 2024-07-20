@@ -4,7 +4,7 @@ Kalıtım, programlama ortamında da gerçek hayattaki tanımına benzer bir iş
 
 Eğer bir A sınıfın B sınıfından kalıtım yapması isteniyorsa, aşağıda ki şekilde tanımlanır.
 
-![0](0.png)
+![0](images/0.png)
 
 ## Kalıtım Türleri
 
@@ -12,7 +12,7 @@ Eğer bir A sınıfın B sınıfından kalıtım yapması isteniyorsa, aşağıd
 
 Bir sınıfın başka bir sınıfı genişlettiği alt ve ata sınıf ilişkisini ifade eder.
 
-![1](1.png)
+![1](images/1.png)
 
 Bu örnekte B sınıfı A sınıfını miras alır.
 
@@ -22,13 +22,13 @@ Bir sınıfın birden fazla sınıfı miras almasını ifade eder; bu, bir alt s
 
 Not: Java çoklu kalıtımı desteklemez. (Interface kullanılır)
 
-![2](2.png)
+![2](images/2.png)
 
 ### Çok Seviyeli Kalıtım (Multilevel Inheritance)
 
 Bir sınıfa ait alt sınıfın başka sınıfları genişletmesine denir.
 
-![3](3.png)
+![3](images/3.png)
 
 Bu örnekte, C sınıfı B sınıfını miras alır, B sınıfı ise A sınıfını miras alır. C sınıfı dolaylı yoldan A sınıfını da miras almış olur.
 
@@ -36,7 +36,7 @@ Bu örnekte, C sınıfı B sınıfını miras alır, B sınıfı ise A sınıfı
 
 Birden fazla sınıfın aynı sınıfı genişlettiği bir alt ve üst sınıf ilişkisini ifade eder.
 
-![4](4.png)
+![4](images/4.png)
 
 Bu örnekte, B, C ve D sınıfları aynı A sınıfını genişletir.
 
@@ -44,7 +44,7 @@ Bu örnekte, B, C ve D sınıfları aynı A sınıfını genişletir.
 
 Programda birden fazla kalıtım türünün kombinasyonuna denir. Örneğin, A ve B sınıfı, C sınıfını genişletir ve başka bir D sınıfı, A sınıfını genişletir. Bu bir hibrit kalıtım örneğidir, çünkü bu, tek yönlü ve hiyerarşik kalıtımın bir birleşimidir.
 
-![5](5.jpeg)
+![5](images/5.jpeg)
 
 ## Kalıtım'da Constructor Zinciri ve Super Anahtar Sözcüğü
 
